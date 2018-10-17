@@ -24,7 +24,7 @@ function showCommits() {
     .join('')}</ul>`;
   document.getElementById('details').innerHTML = commitsList;
 }
-function getCommits(el) {
+function getBranches (el) {
  
   const name = el.dataset.b;
   const req = new XMLHttpRequest();
