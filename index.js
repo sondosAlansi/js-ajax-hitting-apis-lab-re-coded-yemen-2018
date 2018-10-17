@@ -22,13 +22,13 @@ function showCommits() {
         '</li>'
     )
     .join('')}</ul>`;
-  document.getElementById('commits').innerHTML = commitsList;
+  document.getElementById('details').innerHTML = commitsList;
 }
 function getCommits(el) {
   const name = el.dataset.repo;
   const req = new XMLHttpRequest();
   req.addEventListener('load', showCommits);
-  req.open('GET', 'https://api.github.com/repos/octocat/' + name + '/commits');
+  req.open('GET', 'https://api.github.com/users/' + name + '/commits');
   req.send();
 }
 
