@@ -9,7 +9,6 @@ function showRepositories() {
 }
 
 
-
 function getRepositories(){
   let user=document.getElementById('user').value;
   
