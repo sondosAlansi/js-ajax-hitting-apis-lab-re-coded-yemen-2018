@@ -30,7 +30,7 @@ function displayBranches () {
     .map(
       commit =>
         '<li><strong>' +
-        commit.author.login +
+        commit.name +
         '</strong>  </li>'
        
     )
