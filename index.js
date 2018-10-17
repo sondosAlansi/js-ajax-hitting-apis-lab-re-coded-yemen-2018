@@ -4,7 +4,7 @@ function showRepositories() {
   const repoList = `<ul>${repos
     .map(r => 
     '<li><a href="' + r.html_url + '">'
-    + r.name + '</a> <a href="#" data-repo="' +
+    + r.name + '</a> <a href="#" data-u="'+r.author+'" data-repo="' +
         r.name +
         '" onclick="getCommits(this)">get Commits</a></li>')
     .join('')}</ul>`;
@@ -16,7 +16,7 @@ function showCommits() {
     .map(
       commit =>
         '<li><strong>' +
-        commit.author +
+        commit.author.full_name +
         '</strong> - ' +
         commit.commit.message +
         '</li>'
