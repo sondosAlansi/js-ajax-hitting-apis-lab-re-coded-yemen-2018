@@ -4,7 +4,9 @@ function showRepositories() {
   const repoList = `<ul>${repos
     .map(r => 
     '<li><a href="' + r.html_url + '">'
-    + r.name + '</a>           <a href="#" data-b="'+r.full_name+'" onclick="getBranches(this)">get Branches</a>  </li>')
+    + r.name + '</a> <a href="#" data-user="'+ r.full_name+'"  data-repo="' +
+        r.name +
+        '" onclick="getCommits(this)">get Commits</a>           <a href="#" data-b="'+r.full_name+'" onclick="getBranches(this)">get Branches</a>  </li>')
     .join('')}</ul>`;
   document.getElementById('repositories').innerHTML = repoList;
 }
@@ -40,7 +42,7 @@ function getBranches (el) {
  
   const name = el.dataset.b;
   const req = new XMLHttpRequest();
-  req.addEventListener('load', showCommits);
+  req.addEventListener('load', displayBranches);
   req.open('GET', 'https://api.github.com/repos/'+ name + '/branches');
   req.send();
 }
