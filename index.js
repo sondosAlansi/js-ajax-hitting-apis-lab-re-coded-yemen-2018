@@ -24,7 +24,7 @@ function showCommits() {
     .join('')}</ul>`;
   document.getElementById('details').innerHTML = commitsList;
 }
-/*function displayBranches () {
+function displayBranches () {
   const branches = JSON.parse(this.responseText);
   const branchList = `<ul>${branches
     .map(
@@ -36,16 +36,16 @@ function showCommits() {
     )
     .join('')}</ul>`;
   document.getElementById('details').innerHTML = branchList;
-}*/
+}
 
-/*function getBranches (el) {
+function getBranches (el) {
  
   const name = el.dataset.b;
   const req = new XMLHttpRequest();
   req.addEventListener('load', showCommits);
   req.open('GET', 'https://api.github.com/repos/'+ name + '/branches');
   req.send();
-}*/
+}
 function getCommits(el) {
  const user=el.dataset.user;
   const name = el.dataset.repo;
