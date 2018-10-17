@@ -25,10 +25,11 @@ function showCommits() {
   document.getElementById('details').innerHTML = commitsList;
 }
 function getCommits(el) {
+  let user=document.getElementById('user').value;
   const name = el.dataset.repo;
   const req = new XMLHttpRequest();
   req.addEventListener('load', showCommits);
-  req.open('GET', 'https://api.github.com/users/'+ name + '/commits');
+  req.open('GET', 'https://api.github.com/users/'+user+'/'+ name + '/commits');
   req.send();
 }
 
