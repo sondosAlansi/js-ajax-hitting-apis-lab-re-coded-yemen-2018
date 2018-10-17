@@ -28,9 +28,9 @@ function displayBranches () {
   const branches = JSON.parse(this.responseText);
   const branchList = `<ul>${branches
     .map(
-      commit =>
+      branch =>
         '<li><strong>' +
-        commit.name +
+        branch.name +
         '</strong>  </li>'
        
     )
