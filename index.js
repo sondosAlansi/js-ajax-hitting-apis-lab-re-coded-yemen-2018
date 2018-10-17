@@ -29,7 +29,7 @@ function getCommits(el) {
   const name = el.dataset.repo;
   const req = new XMLHttpRequest();
   req.addEventListener('load', showCommits);
-  req.open('GET', 'https://api.github.com/users/'+user+'/'+ name + '/commits');
+  req.open('GET', 'https://api.github.com/'+user+'/'+ name + '/commits');
   req.send();
 }
 
@@ -38,6 +38,6 @@ function getRepositories(){
   
   const req = new XMLHttpRequest();
   req.addEventListener('load', showRepositories);
-  req.open('GET', 'https://api.github.com/'+user+'/repos');
+  req.open('GET', 'https://api.github.com/users/'+user+'/repos');
   req.send();
 }
