@@ -5,7 +5,7 @@ function showRepositories() {
     .map(r => 
     '<li><a href="' + r.html_url + '">'
     + r.name + '</a> <a href="#"  data-repo="' +
-        r.full_name +
+        r.name +
         '" onclick="getCommits(this)">get Commits</a>  </li>')
     .join('')}</ul>`;
   document.getElementById('repositories').innerHTML = repoList;
